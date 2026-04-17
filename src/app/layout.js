@@ -25,12 +25,14 @@ export const metadata = {
   ],
   authors: [{ name: "Shoukat Rai" }],
   creator: "Shoukat Rai",
+  
+  verification: {
+    google: "x0QocGbzEsBGTHlZBD4cjKOo19lBbeqp26e0AjRjv4E",
+  },
+
   openGraph: {
     title: "Shoukat Rai - Full Stack Developer",
     description: "Building scalable web applications with the MERN Stack.",
-    verification: {
-      google: "x0QocGbzEsBGTHlZBD4cjKOo19lBbeqp26e0AjRjv4E",
-    },
     url: "https://shoukatrai.vercel.app",
     siteName: "Shoukat Rai Portfolio",
     images: [
@@ -53,7 +55,7 @@ export default function RootLayout({ children }) {
       className={`${poppins.variable} scroll-smooth`}
     >
       <head>
-        <link rel="icon" href="/Generated Image April 17, 2026 - 8_27PM.png" />
+        <link rel="icon" href="/favicon.ico.png" />
       </head>
       <body className="font-poppins bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
         <ThemeProvider
