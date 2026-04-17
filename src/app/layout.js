@@ -28,6 +28,9 @@ export const metadata = {
   openGraph: {
     title: "Shoukat Rai - Full Stack Developer",
     description: "Building scalable web applications with the MERN Stack.",
+    verification: {
+      google: "x0QocGbzEsBGTHlZBD4cjKOo19lBbeqp26e0AjRjv4E",
+    },
     url: "https://shoukatrai.vercel.app",
     siteName: "Shoukat Rai Portfolio",
     images: [
