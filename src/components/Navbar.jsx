@@ -9,7 +9,6 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Mounted check prevents hydration mismatch errors
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -44,12 +43,10 @@ export default function Navbar() {
             </a>
           ))}
 
-          {/* Theme Toggle Button (Desktop) */}
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-yellow-500 dark:text-indigo-400 hover:ring-2 ring-indigo-500 transition-all"
-              aria-label="Toggle Theme"
             >
               {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
             </button>
@@ -86,22 +83,31 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-gray-950 border-t dark:border-gray-800 overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full bg-white dark:bg-gray-950 border-t dark:border-gray-800 shadow-xl md:hidden z-[90]"
           >
-            <div className="flex flex-col px-6 py-6 gap-4">
+            <div className="flex flex-col p-6 gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-600"
+                  onClick={() => setIsOpen(false)} // Isse link functional ho jayega
+                  className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-600 transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
+              
+              {/* Hire Me Button inside Mobile Menu */}
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="bg-indigo-600 text-white px-5 py-4 rounded-xl font-bold text-center hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/20"
+              >
+                Hire Me
+              </a>
             </div>
           </motion.div>
         )}
