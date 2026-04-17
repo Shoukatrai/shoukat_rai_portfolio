@@ -25,7 +25,7 @@ export const metadata = {
   ],
   authors: [{ name: "Shoukat Rai" }],
   creator: "Shoukat Rai",
-  
+
   verification: {
     google: "x0QocGbzEsBGTHlZBD4cjKOo19lBbeqp26e0AjRjv4E",
   },
@@ -55,6 +55,10 @@ export default function RootLayout({ children }) {
       className={`${poppins.variable} scroll-smooth`}
     >
       <head>
+        <meta
+          name="google-site-verification"
+          content="x0QocGbzEsBGTHlZBD4cjKOo19lBbeqp26e0AjRjv4E"
+        />
         <link rel="icon" href="/favicon.ico.png" />
       </head>
       <body className="font-poppins bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
