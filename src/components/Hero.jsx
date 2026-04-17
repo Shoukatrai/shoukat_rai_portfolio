@@ -80,7 +80,7 @@ export default function Hero() {
           
           <div className="relative w-72 h-72 md:w-[400px] md:h-[400px] rounded-full border-[10px] border-white dark:border-gray-900 p-3 shadow-2xl overflow-hidden bg-white dark:bg-gray-800">
             <Image 
-              src="/profile.jpg" // Ensure public/profile.jpg exists
+              src="/1775076952022.jpg" // Ensure public/profile.jpg exists
               alt="Shoukat Rai - MERN Stack Developer trained at Saylani" 
               fill
               className="object-cover rounded-full group-hover:scale-105 transition-transform duration-500"

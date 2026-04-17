@@ -1,14 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { useTheme } from "next-themes";
+import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Hydration sync
-  useEffect(() => setMounted(true), []);
+  // Mounted check prevents hydration mismatch errors
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -18,10 +22,8 @@ export default function Navbar() {
     { name: "Contact", href: "#contact" },
   ];
 
-  if (!mounted) return null;
-
   return (
-    <nav className="fixed w-full top-0 z-[100] bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b dark:border-gray-800 transition-all">
+    <nav className="fixed w-full top-0 z-[100] bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b dark:border-gray-800 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
         {/* Logo */}
@@ -30,7 +32,7 @@ export default function Navbar() {
           <span className="text-indigo-600">/&gt;</span>
         </a>
 
-        {/* Desktop Links - Theme Toggle Removed */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -41,26 +43,46 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+
+          {/* Theme Toggle Button (Desktop) */}
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-yellow-500 dark:text-indigo-400 hover:ring-2 ring-indigo-500 transition-all"
+              aria-label="Toggle Theme"
+            >
+              {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
+            </button>
+          )}
+
           <a
             href="#contact"
-            className="bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700 transition"
+            className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/20"
           >
             Hire Me
           </a>
         </div>
 
-        {/* Mobile Menu Button - Theme Toggle Removed */}
-        <div className="md:hidden flex items-center">
+        {/* Mobile Buttons */}
+        <div className="md:hidden flex items-center gap-4">
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 text-yellow-500 dark:text-indigo-400"
+            >
+              {theme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
+            </button>
+          )}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-600 dark:text-white focus:outline-none p-2"
+            className="text-gray-600 dark:text-white focus:outline-none"
           >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Container */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -80,13 +102,6 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="mt-2 bg-indigo-600 text-white text-center py-3 rounded-xl font-bold hover:bg-indigo-700 transition"
-              >
-                Hire Me
-              </a>
             </div>
           </motion.div>
         )}
