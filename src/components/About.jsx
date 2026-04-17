@@ -8,7 +8,6 @@ export default function About() {
       className="py-20 bg-gray-50 dark:bg-gray-800/50 transition-colors"
     >
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-        {/* Left Side: Animated Heading & Text */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -26,29 +25,29 @@ export default function About() {
               <span className="font-bold text-indigo-600 dark:text-indigo-400">
                 Shoukat Rai
               </span>
-              , a dedicated MERN Stack Developer. Currently, I am a student at
+              , a dedicated MERN Stack Developer. Currently, I am a graduate at
               <span className="font-semibold text-gray-900 dark:text-white">
                 {" "}
                 Saylani Mass IT Training (SMIT)
               </span>
-              , where I am honing my skills in modern web technologies.
+              , where I am focused on honing my skills in modern web
+              technologies.
             </p>
 
             <p>
               My journey in tech is driven by a passion for building scalable,
-              high-performance web applications. I specialize in the **MERN
-              Stack** (MongoDB, Express.js, React, Node.js) and I am currently
-              exploring the power of **Next.js** for better SEO and performance.
+              high-performance web applications. I specialize in the MERN Stack
+              (MongoDB, Express.js, React, Node.js) and I am currently exploring
+              the power of Next.js for better SEO and performance.
             </p>
 
             <p>
-              Being a 3rd-year **BSIT undergraduate**, I combine my academic
+              Being a 4th-year BSIT undergraduate, I combine my academic
               foundation with practical project experience to deliver clean code
               and seamless user experiences.
             </p>
           </div>
 
-          {/* Quick Info Grid */}
           <div className="mt-8 grid grid-cols-2 gap-4">
             <div className="p-4 bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
               <h4 className="font-bold text-indigo-600">Education</h4>
@@ -63,7 +62,6 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Right Side: Decorative Element or Stats */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}

@@ -24,14 +24,11 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full top-0 z-[100] bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b dark:border-gray-800 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        {/* Logo */}
         <a href="#home" className="text-2xl font-bold dark:text-white">
           <span className="text-indigo-600">&lt;</span>Shoukat
           <span className="text-indigo-600">/&gt;</span>
         </a>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -60,7 +57,6 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Buttons */}
         <div className="md:hidden flex items-center gap-4">
           {mounted && (
             <button
@@ -79,7 +75,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -93,14 +88,13 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)} // Isse link functional ho jayega
+                  onClick={() => setIsOpen(false)}
                   className="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-indigo-600 transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              
-              {/* Hire Me Button inside Mobile Menu */}
+
               <a
                 href="#contact"
                 onClick={() => setIsOpen(false)}

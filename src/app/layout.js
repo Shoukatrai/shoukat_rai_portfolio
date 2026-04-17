@@ -44,23 +44,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    // suppressHydrationWarning yahan zaroori hai next-themes ke liye
     <html
       lang="en"
       suppressHydrationWarning
       className={`${poppins.variable} scroll-smooth`}
     >
       <head>
-        {/* Favicon path ko simple rakhein agar rename kiya hai toh */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/Generated Image April 17, 2026 - 8_27PM.png" />
       </head>
       <body className="font-poppins bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
-        {/* ThemeProvider hamesha body ke foran baad hona chahiye */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange // Is se theme change hote waqt flickering nahi hogi
+          disableTransitionOnChange
         >
           <div className="min-h-screen flex flex-col">{children}</div>
         </ThemeProvider>
