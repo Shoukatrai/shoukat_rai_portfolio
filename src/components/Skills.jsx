@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { 
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaDatabase 
 } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiExpress, SiMongodb, SiFirebase, SiPostman } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiExpress, SiMongodb, SiFirebase,SiSupabase , SiPostman } from "react-icons/si";
 
 const skillCategories = [
   {
@@ -24,6 +24,7 @@ const skillCategories = [
       { name: "Express.js", icon: <SiExpress className="dark:text-gray-300 text-gray-700" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
       { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
+      { name: "Supabase", icon: <SiSupabase className="text-[#3ECF8E]" /> },
     ],
   },
   {
