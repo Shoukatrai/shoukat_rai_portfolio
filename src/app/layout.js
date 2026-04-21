@@ -52,7 +52,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Shoukat Rai | MERN Developer",
-    description: "Full-Stack Web Developer Portfolio",
+    description: "Full-Stack Web Developer",
     images: ["/og-image.png"],
   },
 
