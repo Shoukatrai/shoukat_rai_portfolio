@@ -9,6 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://shoukatrai.vercel.app"),
   title: {
     default: "Shoukat Rai | MERN Stack Developer | Saylani IT Student",
     template: "%s | Shoukat Rai",
@@ -27,7 +28,7 @@ export const metadata = {
   creator: "Shoukat Rai",
 
   verification: {
-    google: "x0QocGbzEsBGTHlZBD4cjKOo19lBbeqp26e0AjRjv4E",
+    google: "6wBik4iQjKxYhzrFUQjvQYYPjMbbtGC4itX72PDKAEw",
   },
 
   openGraph: {
@@ -37,13 +38,17 @@ export const metadata = {
     siteName: "Shoukat Rai Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/public/og-image.png",
         width: 1200,
         height: 630,
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
   },
 };
 
@@ -55,10 +60,7 @@ export default function RootLayout({ children }) {
       className={`${poppins.variable} scroll-smooth`}
     >
       <head>
-        <meta
-          name="google-site-verification"
-          content="x0QocGbzEsBGTHlZBD4cjKOo19lBbeqp26e0AjRjv4E"
-        />
+        <meta name="google-site-verification" content="6wBik4iQjKxYhzrFUQjvQYYPjMbbtGC4itX72PDKAEw" />
         <link rel="icon" href="/favicon.ico.png" />
       </head>
       <body className="font-poppins bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
